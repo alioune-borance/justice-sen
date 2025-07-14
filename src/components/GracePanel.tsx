@@ -130,9 +130,9 @@ export default function GracePanel() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Presidency Grace Panel</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Panneau de Grâce Présidentielle</h2>
         <p className="text-muted-foreground">
-          Review and recommend eligible inmates for presidential grace
+          Examiner et recommander les détenus éligibles à la grâce présidentielle
         </p>
       </div>
 

@@ -84,9 +84,9 @@ export default function SecurityDashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Security Analytics Dashboard</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Tableau de Bord Sécuritaire</h2>
         <p className="text-muted-foreground">
-          Real-time security monitoring for the Ministry of Interior
+          Surveillance sécuritaire en temps réel pour le Ministère de l'Intérieur
         </p>
       </div>
 

@@ -7,31 +7,31 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Calendar, MapPin, Phone, Mail, AlertTriangle, Check, X } from "lucide-react";
 
 const inmateData = {
-  id: "INM-2024-001234",
+  id: "DET-2024-001234",
   name: "Ahmed Hassan Mohammed",
   photo: "",
   age: 34,
-  nationality: "Egyptian",
-  dateOfBirth: "1990-03-15",
-  admissionDate: "2022-06-20",
-  expectedRelease: "2026-06-20",
-  currentLocation: "Cairo Central Prison - Block A, Cell 45",
-  status: "Active",
-  riskLevel: "Medium",
+  nationality: "Égyptien",
+  dateOfBirth: "15-03-1990",
+  admissionDate: "20-06-2022",
+  expectedRelease: "20-06-2026",
+  currentLocation: "Prison Centrale du Caire - Bloc A, Cellule 45",
+  status: "Actif",
+  riskLevel: "Moyen",
   personalInfo: {
-    address: "15 Al-Azhar Street, Cairo",
+    address: "15 Rue Al-Azhar, Le Caire",
     phone: "+20 101 234 5678",
     email: "ahmed.hassan@email.com",
-    emergencyContact: "Fatima Hassan (Sister) - +20 102 345 6789",
-    education: "High School Graduate",
-    occupation: "Construction Worker",
-    maritalStatus: "Married",
+    emergencyContact: "Fatima Hassan (Sœur) - +20 102 345 6789",
+    education: "Diplômé du lycée",
+    occupation: "Ouvrier du bâtiment",
+    maritalStatus: "Marié",
     children: 2
   },
   judicialRecord: {
-    currentSentence: "4 years imprisonment",
-    crimeType: "Theft",
-    courtCase: "Case No. 2022/789",
+    currentSentence: "4 ans d'emprisonnement",
+    crimeType: "Vol",
+    courtCase: "Affaire No. 2022/789",
     judge: "Judge Mohammed Al-Rashid",
     prosecutor: "Prosecutor Sarah Ahmed",
     timeServed: "1 year, 8 months",
@@ -68,9 +68,9 @@ export default function InmateProfile() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Inmate Profile</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Profil du Détenu</h2>
         <p className="text-muted-foreground">
-          Detailed information for inmate {inmateData.id}
+          Informations détaillées pour le détenu {inmateData.id}
         </p>
       </div>
 
@@ -118,11 +118,11 @@ export default function InmateProfile() {
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="personal">Personal Info</TabsTrigger>
-          <TabsTrigger value="judicial">Judicial Record</TabsTrigger>
-          <TabsTrigger value="visits">Visit History</TabsTrigger>
-          <TabsTrigger value="behavior">Behavioral Notes</TabsTrigger>
-          <TabsTrigger value="grace">Grace Eligibility</TabsTrigger>
+          <TabsTrigger value="personal">Infos Personnelles</TabsTrigger>
+          <TabsTrigger value="judicial">Dossier Judiciaire</TabsTrigger>
+          <TabsTrigger value="visits">Historique Visites</TabsTrigger>
+          <TabsTrigger value="behavior">Notes Comportementales</TabsTrigger>
+          <TabsTrigger value="grace">Éligibilité Grâce</TabsTrigger>
         </TabsList>
 
         <TabsContent value="personal" className="space-y-4">

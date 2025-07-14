@@ -4,9 +4,9 @@ export default function Statistics() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Statistics</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Statistiques</h2>
         <p className="text-muted-foreground">
-          Comprehensive statistical analysis and reporting
+          Analyses statistiques et rapports détaillés
         </p>
       </div>
       

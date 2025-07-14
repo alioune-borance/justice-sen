@@ -4,58 +4,58 @@ import { Users, Building, Calendar, FileText } from "lucide-react";
 
 const overviewData = [
   {
-    title: "Total Inmates",
-    value: "45,284",
-    change: "+2.5%",
+    title: "Total Détenus",
+    value: "45 284",
+    change: "+2,5%",
     icon: Users,
     color: "text-primary"
   },
   {
-    title: "Active Prisons",
+    title: "Prisons Actives",
     value: "127",
-    change: "No change",
+    change: "Aucun changement",
     icon: Building,
     color: "text-info"
   },
   {
-    title: "Scheduled Visits Today",
-    value: "1,847",
-    change: "+8.2%",
+    title: "Visites Programmées Aujourd'hui",
+    value: "1 847",
+    change: "+8,2%",
     icon: Calendar,
     color: "text-warning"
   },
   {
-    title: "Pending Grace Candidates",
+    title: "Candidats à la Grâce en Attente",
     value: "342",
-    change: "-1.1%",
+    change: "-1,1%",
     icon: FileText,
     color: "text-success"
   }
 ];
 
 const crimeTypesData = [
-  { name: "Theft", value: 35, color: "#1e40af" },
-  { name: "Drug Offenses", value: 28, color: "#3b82f6" },
-  { name: "Assault", value: 18, color: "#60a5fa" },
-  { name: "Fraud", value: 12, color: "#93c5fd" },
-  { name: "Other", value: 7, color: "#dbeafe" }
+  { name: "Vol", value: 35, color: "#1e40af" },
+  { name: "Infractions Drogue", value: 28, color: "#3b82f6" },
+  { name: "Agression", value: 18, color: "#60a5fa" },
+  { name: "Fraude", value: 12, color: "#93c5fd" },
+  { name: "Autres", value: 7, color: "#dbeafe" }
 ];
 
 const recidivismData = [
-  { region: "North", rate: 23 },
-  { region: "South", rate: 31 },
-  { region: "East", rate: 18 },
-  { region: "West", rate: 27 },
-  { region: "Central", rate: 25 }
+  { region: "Nord", rate: 23 },
+  { region: "Sud", rate: 31 },
+  { region: "Est", rate: 18 },
+  { region: "Ouest", rate: 27 },
+  { region: "Centre", rate: 25 }
 ];
 
 export default function Dashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Dashboard</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Tableau de Bord</h2>
         <p className="text-muted-foreground">
-          Overview of the national prison management system
+          Vue d'ensemble du système national de gestion pénitentiaire
         </p>
       </div>
 
@@ -72,7 +72,7 @@ export default function Dashboard() {
             <CardContent>
               <div className="text-2xl font-bold text-foreground">{item.value}</div>
               <p className="text-xs text-muted-foreground mt-1">
-                {item.change} from last month
+                {item.change} par rapport au mois dernier
               </p>
             </CardContent>
           </Card>
@@ -84,7 +84,7 @@ export default function Dashboard() {
         {/* Crime Types Distribution */}
         <Card>
           <CardHeader>
-            <CardTitle>Crime Types Distribution</CardTitle>
+            <CardTitle>Répartition des Types de Crimes</CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -125,7 +125,7 @@ export default function Dashboard() {
         {/* Recidivism Rate by Region */}
         <Card>
           <CardHeader>
-            <CardTitle>Recidivism Rate by Region</CardTitle>
+            <CardTitle>Taux de Récidive par Région</CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -144,15 +144,15 @@ export default function Dashboard() {
       {/* Recent Activity */}
       <Card>
         <CardHeader>
-          <CardTitle>Recent System Activity</CardTitle>
+          <CardTitle>Activité Récente du Système</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {[
-              { time: "10:30 AM", action: "New inmate admission", location: "Central Prison" },
-              { time: "9:45 AM", action: "Visit approved", location: "North Regional Facility" },
-              { time: "9:15 AM", action: "Grace request submitted", location: "East Correctional Center" },
-              { time: "8:30 AM", action: "Security alert resolved", location: "West Prison Complex" }
+              { time: "10h30", action: "Nouvelle admission de détenu", location: "Prison Centrale" },
+              { time: "9h45", action: "Visite approuvée", location: "Établissement Régional Nord" },
+              { time: "9h15", action: "Demande de grâce soumise", location: "Centre Correctionnel Est" },
+              { time: "8h30", action: "Alerte sécurité résolue", location: "Complexe Pénitentiaire Ouest" }
             ].map((activity, index) => (
               <div key={index} className="flex items-center justify-between py-2 border-b border-border last:border-b-0">
                 <div className="flex flex-col">

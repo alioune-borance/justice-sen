@@ -16,14 +16,14 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navigationItems = [
-  { name: "Dashboard", href: "/", icon: LayoutDashboard },
-  { name: "Inmates", href: "/inmates", icon: Users },
-  { name: "Visits", href: "/visits", icon: Calendar },
-  { name: "Statistics", href: "/statistics", icon: BarChart3 },
-  { name: "Grace Requests", href: "/grace", icon: FileText },
-  { name: "Security Analytics", href: "/security", icon: Shield },
-  { name: "User Management", href: "/users", icon: UserCog },
-  { name: "Settings", href: "/settings", icon: Settings },
+  { name: "Tableau de Bord", href: "/", icon: LayoutDashboard },
+  { name: "Détenus", href: "/inmates", icon: Users },
+  { name: "Visites", href: "/visits", icon: Calendar },
+  { name: "Statistiques", href: "/statistics", icon: BarChart3 },
+  { name: "Demandes de Grâce", href: "/grace", icon: FileText },
+  { name: "Analyse Sécuritaire", href: "/security", icon: Shield },
+  { name: "Gestion Utilisateurs", href: "/users", icon: UserCog },
+  { name: "Paramètres", href: "/settings", icon: Settings },
 ];
 
 interface LayoutProps {
@@ -48,10 +48,10 @@ export default function Layout({ children }: LayoutProps) {
             >
               {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
-            <h1 className="text-xl font-semibold">National Prison Management System</h1>
+            <h1 className="text-xl font-semibold">Système National de Gestion Pénitentiaire</h1>
           </div>
           <div className="text-sm">
-            Ministry of Justice | Ministry of Interior | Presidency
+            Ministère de la Justice | Ministère de l'Intérieur | Présidence
           </div>
         </div>
       </header>

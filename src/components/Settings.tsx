@@ -4,9 +4,9 @@ export default function Settings() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Settings</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Paramètres</h2>
         <p className="text-muted-foreground">
-          System configuration and preferences
+          Configuration du système et préférences
         </p>
       </div>
       

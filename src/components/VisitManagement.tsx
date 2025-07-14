@@ -10,16 +10,16 @@ import { Search, Check, X, Filter } from "lucide-react";
 const visitsData = [
   {
     id: "VIS-2024-001",
-    inmateId: "INM-2024-001234",
+    inmateId: "DET-2024-001234",
     inmateName: "Ahmed Hassan Mohammed",
     visitorName: "Fatima Hassan",
-    relationship: "Sister",
+    relationship: "Sœur",
     date: "2024-01-20",
     time: "14:00",
-    duration: "2 hours",
-    status: "Pending",
-    purpose: "Family Visit",
-    notes: "First visit request"
+    duration: "2 heures",
+    status: "En attente",
+    purpose: "Visite familiale",
+    notes: "Première demande de visite"
   },
   {
     id: "VIS-2024-002",
@@ -117,9 +117,9 @@ export default function VisitManagement() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Visit Management</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Gestion des Visites</h2>
         <p className="text-muted-foreground">
-          Manage and review scheduled prison visits
+          Gérer et examiner les visites pénitentiaires programmées
         </p>
       </div>
 
@@ -128,17 +128,17 @@ export default function VisitManagement() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Filter className="h-5 w-5" />
-            Filters
+            Filtres
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium">Search</label>
+              <label className="text-sm font-medium">Recherche</label>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search by inmate, visitor, or ID..."
+                  placeholder="Rechercher par détenu, visiteur ou ID..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -147,31 +147,31 @@ export default function VisitManagement() {
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-medium">Status</label>
+              <label className="text-sm font-medium">Statut</label>
               <Select value={statusFilter} onValueChange={setStatusFilter}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Filter by status" />
+                  <SelectValue placeholder="Filtrer par statut" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="All">All Statuses</SelectItem>
-                  <SelectItem value="Pending">Pending</SelectItem>
-                  <SelectItem value="Approved">Approved</SelectItem>
-                  <SelectItem value="Denied">Denied</SelectItem>
+                  <SelectItem value="All">Tous les Statuts</SelectItem>
+                  <SelectItem value="Pending">En attente</SelectItem>
+                  <SelectItem value="Approved">Approuvé</SelectItem>
+                  <SelectItem value="Denied">Refusé</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium">Purpose</label>
+              <label className="text-sm font-medium">Motif</label>
               <Select value={purposeFilter} onValueChange={setPurposeFilter}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Filter by purpose" />
+                  <SelectValue placeholder="Filtrer par motif" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="All">All Purposes</SelectItem>
-                  <SelectItem value="Family Visit">Family Visit</SelectItem>
-                  <SelectItem value="Legal Consultation">Legal Consultation</SelectItem>
-                  <SelectItem value="Medical Consultation">Medical Consultation</SelectItem>
+                  <SelectItem value="All">Tous les Motifs</SelectItem>
+                  <SelectItem value="Family Visit">Visite Familiale</SelectItem>
+                  <SelectItem value="Legal Consultation">Consultation Légale</SelectItem>
+                  <SelectItem value="Medical Consultation">Consultation Médicale</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -182,21 +182,21 @@ export default function VisitManagement() {
       {/* Visits Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Scheduled Visits ({filteredVisits.length})</CardTitle>
+          <CardTitle>Visites Programmées ({filteredVisits.length})</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Visit ID</TableHead>
-                  <TableHead>Inmate</TableHead>
-                  <TableHead>Visitor</TableHead>
-                  <TableHead>Relationship</TableHead>
-                  <TableHead>Date & Time</TableHead>
-                  <TableHead>Duration</TableHead>
-                  <TableHead>Purpose</TableHead>
-                  <TableHead>Status</TableHead>
+                  <TableHead>ID Visite</TableHead>
+                  <TableHead>Détenu</TableHead>
+                  <TableHead>Visiteur</TableHead>
+                  <TableHead>Relation</TableHead>
+                  <TableHead>Date & Heure</TableHead>
+                  <TableHead>Durée</TableHead>
+                  <TableHead>Motif</TableHead>
+                  <TableHead>Statut</TableHead>
                   <TableHead>Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -246,9 +246,9 @@ export default function VisitManagement() {
                           </Button>
                         </div>
                       )}
-                      {visit.status !== "Pending" && (
+                      {visit.status !== "En attente" && (
                         <span className="text-sm text-muted-foreground">
-                          {visit.status === "Approved" ? "Approved" : "Denied"}
+                          {visit.status === "Approuvé" ? "Approuvé" : "Refusé"}
                         </span>
                       )}
                     </TableCell>
@@ -268,7 +268,7 @@ export default function VisitManagement() {
               <p className="text-2xl font-bold text-primary">
                 {visits.filter(v => v.status === "Pending").length}
               </p>
-              <p className="text-sm text-muted-foreground">Pending Approval</p>
+              <p className="text-sm text-muted-foreground">En Attente d'Approbation</p>
             </div>
           </CardContent>
         </Card>
@@ -279,7 +279,7 @@ export default function VisitManagement() {
               <p className="text-2xl font-bold text-success">
                 {visits.filter(v => v.status === "Approved").length}
               </p>
-              <p className="text-sm text-muted-foreground">Approved Today</p>
+              <p className="text-sm text-muted-foreground">Approuvées Aujourd'hui</p>
             </div>
           </CardContent>
         </Card>
@@ -290,7 +290,7 @@ export default function VisitManagement() {
               <p className="text-2xl font-bold text-destructive">
                 {visits.filter(v => v.status === "Denied").length}
               </p>
-              <p className="text-sm text-muted-foreground">Denied Today</p>
+              <p className="text-sm text-muted-foreground">Refusées Aujourd'hui</p>
             </div>
           </CardContent>
         </Card>
@@ -301,7 +301,7 @@ export default function VisitManagement() {
               <p className="text-2xl font-bold text-info">
                 {visits.length}
               </p>
-              <p className="text-sm text-muted-foreground">Total Requests</p>
+              <p className="text-sm text-muted-foreground">Total Demandes</p>
             </div>
           </CardContent>
         </Card>

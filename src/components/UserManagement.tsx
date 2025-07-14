@@ -4,9 +4,9 @@ export default function UserManagement() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">User Management</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Gestion des Utilisateurs</h2>
         <p className="text-muted-foreground">
-          Manage system users, roles, and permissions
+          Gérer les utilisateurs du système, rôles et permissions
         </p>
       </div>
       
